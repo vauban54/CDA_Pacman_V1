@@ -1,0 +1,27 @@
+.conteneur {
+    display: grid;
+    grid-template-columns: repeat(19, 40px);
+    grid-template-rows: repeat(22, 40px);
+    width: fit-content;
+    margin: 0 auto;
+    background-color: brown;
+    border: solid 5px black;
+    border-color: black;
+}
+
+.mur {
+    size: 40px 40px;
+    background-image: url("../img/mur.gif");
+}
+.sol {
+    size: 40px 40px;
+    background-image: url("../img/sol.gif");
+}
+.bonbon {
+    size: 40px 40px;
+    background-image: url("../img/bonbon.gif");
+}
+.pacman {
+    size: 40px 40px;
+    background-image: url("../img/pacman4.gif");
+}
