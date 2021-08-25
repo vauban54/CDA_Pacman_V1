@@ -1,4 +1,5 @@
 .conteneur {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(19, 40px);
     grid-template-rows: repeat(22, 40px);
@@ -24,4 +25,23 @@
 .pacman {
     size: 40px 40px;
     background-image: url("../img/pacman4.gif");
+}
+.fantom0 {
+    size: 40px 40px;
+    background-image: url("../img/fantome0.gif");
+}
+.fantom1 {
+    size: 40px 40px;
+    background-image: url("../img/fantome1.gif");
+}
+.fantom2 {
+    size: 40px 40px;
+    background-image: url("../img/fantome2.gif");
+}
+.fantom3 {
+    size: 40px 40px;
+    background-image: url("../img/fantome3.gif");
+}
+h1 {
+    color: darkblue;
 }
