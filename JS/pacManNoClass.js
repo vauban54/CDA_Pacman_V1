@@ -20,7 +20,7 @@ let tab = [
     [0, 2, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 2, 0],
     [0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0],
     [0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
 // let tab = [
@@ -133,9 +133,9 @@ function affichPacman() {
     pacmanElem.style.gridArea = pacman.y + '/' + pacman.x;
 };
 function affichFantom(num) {
-    let conteneur = document.getElementById('grille');    
+    let conteneur = document.getElementById('grille');
     let fantomElem = document.createElement('div');
-    fantomElem.classList.add('fantom'+num);
+    fantomElem.classList.add('fantom' + num);
     conteneur.appendChild(fantomElem);
     fantomElem.style.gridArea = tabfantoms[num].y + '/' + tabfantoms[num].x;
 };
@@ -163,7 +163,7 @@ function bougePacman() {
 };
 function bougefantom(num) {
     // Les
-    tabfantoms[num].direction = Math.round(Math.random() * 4)%4 + 1;
+    tabfantoms[num].direction = Math.round(Math.random() * 4) % 4 + 1;
     if (tabfantoms[num].direction == 1) {
         tabfantoms[num].y++
     }
@@ -220,7 +220,7 @@ function colisionPacman() {
         if (pacman.direction == 4) {
             pacman.x++
         }
-        
+
     }
     // if ((tabfantoms[num].y == pacman.y) && (tabfantoms[num].x == pacman.x)){
     //         console.log('PERDU');
@@ -241,14 +241,14 @@ function colisionfantom(num) {
         if (tabfantoms[num].direction == 4) {
             tabfantoms[num].x++
         }
-        
-        
+
+
         // tabfantoms[num].direction = Math.round(Math.random() * 3) % 4 + 1;
     }
-    if ((tabfantoms[num].y-1 == pacman.y-1) && (tabfantoms[num].x-1 == pacman.x-1)){
+    if ((tabfantoms[num].y - 1 == pacman.y - 1) && (tabfantoms[num].x - 1 == pacman.x - 1)) {
         clearInterval(numInterval);
-        alert('GAME OVER');   
-        }
+        alert('GAME OVER');
+    }
 };
 function mangerBonbon() {
     if (tab[pacman.y - 1][pacman.x - 1] == 2) {
@@ -275,14 +275,14 @@ function tourDeJeu() {
 
     bougePacman();
     for (let i = 0; i < tabfantoms.length; i++) {
-        bougefantom (i);
+        bougefantom(i);
         colisionfantom(i);
-        affichFantom (i);
-    }    
-    colisionPacman();    
+        affichFantom(i);
+    }
+    colisionPacman();
     mangerBonbon();
     affichPacman();
-    
+
     console.log(score);
     gagner();
 };
